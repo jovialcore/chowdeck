@@ -28,3 +28,8 @@ const routes = require('./Routes/routes')
 
 app.use('/api', routes)
 
+
+const sequelize = require('./database')
+sequelize.sync({ alter: true }).then(() => {
+    console.log('Database has been synchronized')
+})

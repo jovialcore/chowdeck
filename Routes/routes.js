@@ -2,14 +2,11 @@ const express = require('express')
 
 const router = express.Router()
 
-const Vendor = require('../Model/Vendor')
-
-const MenuItem = require('../Model/MenuItem')
+const vendorController = require('../Controllers/VendorController')
 
 
-router.get('/vendor', async (req, res) => {
-    res.json({ message: 'we have just written our first code in nodejs application' })
-})
+
+router.get('/vendor', vendorController.listMenuItems);
 
 
 module.exports = router
